@@ -63,7 +63,11 @@ server.registerTool(
       "'Wahlpflichtbereich Theoretische Informatik'), for a specific StuPO + semester (get these from " +
       "get_degree_program_structure first). Each module includes credits (lp), whether it's graded, its exam " +
       "type (examType, e.g. 'Schriftliche Prüfung' or 'Portfolioprüfung'), and Turnus. Filter the results " +
-      "client-side on examType to answer questions like 'which mandatory modules use a Portfolioprüfung'.",
+      "client-side on examType to answer questions like 'which mandatory modules use a Portfolioprüfung'. " +
+      "The result also includes passingRules: StuPO-defined conditions for passing this specific area (e.g. " +
+      "'at least 6, at most 9 credits' or category requirements like requiring both a Seminar and a " +
+      "Praktikum). These are NOT implied by the module list — when building a study plan, you MUST satisfy " +
+      "each selected area's passingRules, not just pick modules until some overall credit target looks met.",
     inputSchema: {
       programId: z.string().describe("Degree program id"),
       stupo: z.string().describe("Studien-/Prüfungsordnung id (the 'mkg' value)"),

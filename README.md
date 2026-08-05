@@ -16,7 +16,7 @@ There's no official Moses API, so this works by parsing the public MTS web pages
 |---|---|
 | `search_degree_programs` | Search degree programs by name, e.g. "Informatik" |
 | `get_degree_program_structure` | Get a program's curriculum areas (Pflichtbereich, Wahlpflichtbereich, ...) with module/credit counts |
-| `list_area_modules` | List the modules in one curriculum area, with credits, grading, exam type, and Turnus |
+| `list_area_modules` | List the modules in one curriculum area, with credits, grading, exam type, and Turnus — plus the StuPO's passing rules for that area (e.g. credit min/max) |
 | `search_modules` | Search modules by title or number, e.g. "Computer Vision" |
 | `get_module_details` | Full module description: content, exam type, and which other degree programs use it |
 
@@ -26,6 +26,7 @@ Example things you can ask an MCP client connected to this server:
 - "Of those, which use a Portfolioprüfung instead of a written exam?"
 - "Recommend some Computer Vision modules for the Computer Science Master's."
 - "What other degree programs can take module 40022?"
+- "Make me a 6-semester study plan for the Informatik B.Sc. specializing in Theoretical Computer Science" (respects each area's StuPO passing rules, not just credit totals)
 
 ## Requirements
 

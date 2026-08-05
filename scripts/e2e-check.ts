@@ -35,7 +35,7 @@ async function main() {
   if (!pflicht) throw new Error("Pflichtbereich not found");
   console.log(`Pflichtbereich: ${pflicht.moduleCount} modules, ${pflicht.lp} LP`);
 
-  const areaModules = textOf(
+  const pflichtArea = textOf(
     await client.callTool({
       name: "list_area_modules",
       arguments: {
@@ -46,9 +46,14 @@ async function main() {
       },
     }),
   );
+  const areaModules = pflichtArea.modules;
   console.log(`list_area_modules returned ${areaModules.length} modules`);
+  console.log("passingRules:", pflichtArea.passingRules);
   if (areaModules.length !== pflicht.moduleCount) {
     throw new Error(`Expected ${pflicht.moduleCount} modules, got ${areaModules.length}`);
+  }
+  if (pflichtArea.passingRules.length === 0) {
+    throw new Error("Expected at least one passing rule for Pflichtbereich");
   }
 
   console.log("\n=== Query 2: which Pflichtmodule use Portfolioprüfung ===");
@@ -58,6 +63,23 @@ async function main() {
     portfolio.map((m: any) => m.name),
   );
   if (portfolio.length === 0) throw new Error("Expected at least one Portfolioprüfung module");
+
+  console.log("\n=== Query 2b: Wahlpflicht area passing rules (StuPO min/max credits) ===");
+  const wahlpflichtArea = textOf(
+    await client.callTool({
+      name: "list_area_modules",
+      arguments: {
+        programId: informatik.id,
+        stupo: structure.selectedStupo.value,
+        semester: structure.selectedSemester.value,
+        area: "Wahlpflichtbereich Programmierpraktikum",
+      },
+    }),
+  );
+  console.log("passingRules:", wahlpflichtArea.passingRules);
+  if (wahlpflichtArea.passingRules.length < 2) {
+    throw new Error("Expected at least two passing rules (min + max credits) for the Wahlpflicht area");
+  }
 
   console.log("\n=== Query 3: Computer Vision module recommendations ===");
   const cvModules = textOf(await client.callTool({ name: "search_modules", arguments: { query: "Computer Vision" } }));
