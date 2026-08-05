@@ -43,6 +43,17 @@ export interface AreaModule {
   moduleUrl: string;
 }
 
+export interface AreaModulesResult {
+  modules: AreaModule[];
+  /**
+   * StuPO-defined conditions for passing this curriculum area (e.g. "at
+   * least 6, at most 9 LP" or category requirements) that are NOT implied
+   * by the module list alone. Respect these when composing a study plan —
+   * don't just pick modules until a credit target is met.
+   */
+  passingRules: string[];
+}
+
 export interface ModuleSearchResult {
   moduleNumber: string;
   version: string;

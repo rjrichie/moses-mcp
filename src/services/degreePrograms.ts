@@ -2,8 +2,8 @@ import { cached } from "../cache.js";
 import { mosesClient } from "../mosesClient.js";
 import { extractAreaExpandRequest, parseDegreeProgramTree } from "../parsers/parseDegreeProgramTree.js";
 import { parseDegreeProgramSearch } from "../parsers/parseDegreeProgramSearch.js";
-import { parseAreaModules } from "../parsers/parseAreaModules.js";
-import type { AreaModule, DegreeProgramStructure, DegreeProgramSummary } from "../types.js";
+import { parseAreaExpansion } from "../parsers/parseAreaModules.js";
+import type { AreaModulesResult, DegreeProgramStructure, DegreeProgramSummary } from "../types.js";
 
 const MAX_STUPO_FALLBACK_ATTEMPTS = 4;
 
@@ -85,7 +85,8 @@ export async function getDegreeProgramStructure(
 /**
  * List the modules assigned to a curriculum area (e.g. "Pflichtbereich",
  * "Wahlpflichtbereich Theoretische Informatik") within a specific StuPO +
- * semester snapshot of a degree program's structure.
+ * semester snapshot of a degree program's structure, along with the area's
+ * StuPO-defined passing rules (credit min/max, category requirements, ...).
  */
 export async function listAreaModules(
   programId: string,
@@ -93,7 +94,7 @@ export async function listAreaModules(
   semester: string,
   areaNameOrRowKey: string,
   opts: { refresh?: boolean } = {},
-): Promise<AreaModule[]> {
+): Promise<AreaModulesResult> {
   const url = programUrl(programId, stupo, semester);
   const html = await cached(`degree-program-tree:${programId}:${stupo}:${semester}`, () => mosesClient.get(url), {
     refresh: opts.refresh,
@@ -117,5 +118,5 @@ export async function listAreaModules(
     { refresh: opts.refresh },
   );
 
-  return parseAreaModules(xml, req.renderTarget);
+  return parseAreaExpansion(xml, req.renderTarget);
 }
