@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head id="j_idt6">
+        <meta charset="utf-8" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="x-ua-compatible" content="IE=edge" />
+
+        <meta id="mosesMeta" data-server_url="https://moseskonto.tu-berlin.de/moses" />
+        <script type="text/javascript">
+            const { server_url } = document.getElementById("mosesMeta").dataset
+            window.serverUrl = server_url /*_*/
+
+            /*_*/
+            window.getResourceRootPath = (match, idx, string) => {
+                // replace '/@resource/' with:
+                return window.serverUrl + "/jakarta.faces.resource/"
+            }
+        </script>
+
+        <noscript>
+            <meta http-equiv="refresh" content="0;url=https://moseskonto.tu-berlin.de/moses/error/noscript.html" />
+        </noscript><link type="text/css" rel="stylesheet" href="/moses/jakarta.faces.resource/theme.css.html?ln=primefaces-bootstrap&amp;v=14.0.0&amp;e=14.0.0" /><link type="text/css" rel="stylesheet" href="/moses/jakarta.faces.resource/primeicons/primeicons.css.html?ln=primefaces&amp;v=14.0.0&amp;e=14.0.0" /><script src="/moses/jakarta.faces.resource/faces.js.html?ln=jakarta.faces&amp;stage=Development"></script><script src="/moses/jakarta.faces.resource/omnifaces.js.html?ln=omnifaces&amp;v=4.7.1"></script><script src="/moses/jakarta.faces.resource/jquery/jquery.js.html?ln=primefaces&amp;v=14.0.0&amp;e=14.0.0"></script><script src="/moses/jakarta.faces.resource/jquery/jquery-plugins.js.html?ln=primefaces&amp;v=14.0.0&amp;e=14.0.0"></script><script src="/moses/jakarta.faces.resource/core.js.html?ln=primefaces&amp;v=14.0.0&amp;e=14.0.0"></script><script src="/moses/jakarta.faces.resource/components.js.html?ln=primefaces&amp;v=14.0.0&amp;e=14.0.0"></script><script src="/moses/jakarta.faces.resource/filedownload/filedownload.js.html?ln=primefaces&amp;v=14.0.0&amp;e=14.0.0"></script><link rel="stylesheet" href="/moses/jakarta.faces.resource/components.css.html?ln=primefaces&amp;v=14.0.0&amp;e=14.0.0" /><script src="/moses/jakarta.faces.resource/touch/touchswipe.js.html?ln=primefaces&amp;v=14.0.0&amp;e=14.0.0"></script><script src="/moses/jakarta.faces.resource/shared.js.html?ln=dist"></script><script src="/moses/jakarta.faces.resource/style.js.html?ln=dist"></script><script src="/moses/jakarta.faces.resource/main.js.html?ln=dist"></script><script src="/moses/jakarta.faces.resource/bootstrap.min.js.html?ln=js"></script><script src="/moses/jakarta.faces.resource/primefaces-locale.min.js.html?ln=js"></script><script src="/moses/jakarta.faces.resource/html2pdf.min.js.html?ln=js"></script><script src="/moses/jakarta.faces.resource/validation/validation.js.html?ln=primefaces&amp;v=14.0.0&amp;e=14.0.0"></script><script src="/moses/jakarta.faces.resource/locales/locale-de.js.html?ln=primefaces&amp;v=14.0.0&amp;e=14.0.0"></script><script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.locale='de_DE';PrimeFaces.settings.viewId='/modultransfersystem/bolognamodule/beschreibung/anzeigen.xhtml';PrimeFaces.settings.contextPath='/moses';PrimeFaces.settings.cookiesSecure=false;PrimeFaces.settings.cookiesSameSite='Strict';PrimeFaces.settings.validateEmptyFields=true;PrimeFaces.settings.considerEmptyStringNull=false;PrimeFaces.settings.projectStage='Development';}</script>
+
+    <title>Moses - Algorithmen und Datenstrukturen</title>
+
+    
+    <link rel="apple-touch-icon" href="/moses/docs/images/favicon/apple-touch-icon.png" sizes="180x180" />
+    <link rel="icon" type="image/png" href="/moses/docs/images/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/moses/docs/images/favicon/favicon-16x16.png" sizes="16x16" />
+    
+    <link crossorigin="use-credentials" rel="manifest" href="/moses/docs/images/favicon/manifest.json" />
+    <link rel="mask-icon" href="/moses/docs/images/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="/moses/docs/images/favicon/favicon.ico" />
+    <meta name="msapplication-config" content="/moses/docs/images/favicon/browserconfig.xml" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" /></head><body>
+
+    <script>
+        // Prevent Safari's bfcache:
+        // Even-tough all imaginable http response headers that prevent caching are set, Safari still does not reload
+        // the page when the browser's back button was used. These stale pages will then result in an immediate timeout
+        // exception since Jakarta Faces has discarded the servlet already. The only way to prevent this is to
+        // immediately reload the page.
+        window.addEventListener("pageshow", function (event) {
+            if (event.persisted) {
+                window.location.reload()
+            }
+        })
+    </script>
+<form id="growl-form" name="growl-form" method="post" action="/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?jfwid=ab5a42a5-9b78-470b-a3cf-371abe7df188:4" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="growl-form" value="growl-form" />
+<div id="growl-form:growl">
+        <div class="container moses-growl ">
+
+        </div></div><input type="hidden" name="jakarta.faces.ViewState" id="j_id1:jakarta.faces.ViewState:0" value="-5754495619677104771:7835854346271690221" autocomplete="off" /><input type="hidden" name="jakarta.faces.ClientWindow" id="j_id1:jakarta.faces.ClientWindow:0" value="ab5a42a5-9b78-470b-a3cf-371abe7df188:4" autocomplete="off" />
+</form>
+<form id="confirmDialogForm" name="confirmDialogForm" method="post" action="/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?jfwid=ab5a42a5-9b78-470b-a3cf-371abe7df188:4" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="confirmDialogForm" value="confirmDialogForm" />
+<div id="confirmDialogForm:j_idt33" class="modal fade modal-confirm" tabindex="-1" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close modal-confirm-x" data-dismiss="modal" aria-label=""><span aria-hidden="aria-hidden" class=""></span></button><h4 class="modal-title"><span class="modal-confirm-icon ic-space-r"></span><span class="modal-confirm-header"></span></h4></div><div class="modal-body"><p class="modal-confirm-message"></p></div><div class="modal-footer"><button type="button" class="modal-confirm-dismiss ic-space-r" data-dismiss="modal"><span class=""></span><span></span></button><button type="button" class="modal-confirm-accept ic-space-r" data-dismiss="modal"><span class=""></span><span></span></button></div></div></div></div><input type="hidden" name="jakarta.faces.ViewState" id="j_id1:jakarta.faces.ViewState:1" value="-5754495619677104771:7835854346271690221" autocomplete="off" /><input type="hidden" name="jakarta.faces.ClientWindow" id="j_id1:jakarta.faces.ClientWindow:1" value="ab5a42a5-9b78-470b-a3cf-371abe7df188:4" autocomplete="off" />
+</form>
+<form id="popupNotificationForm" name="popupNotificationForm" method="post" action="/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?jfwid=ab5a42a5-9b78-470b-a3cf-371abe7df188:4" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="popupNotificationForm" value="popupNotificationForm" />
+<div id="popupNotificationForm:popup-notification-modal" class="modal " aria-hidden="aria-hidden" tabindex="-1" role="dialog"><input id="popupNotificationForm:popup-notification-modal_input" name="popupNotificationForm:popup-notification-modal_input" hidden="true" value="ACCEPTED" onchange="PrimeFaces.ab({s:&quot;popupNotificationForm:popup-notification-modal&quot;,e:&quot;change&quot;,f:&quot;popupNotificationForm&quot;,p:&quot;popupNotificationForm:popup-notification-modal&quot;,u:&quot;popupNotificationForm:popup-notification-modal&quot;,ps:true});" /><input id="popupNotificationForm:popup-notification-modal_top" name="popupNotificationForm:popup-notification-modal_top" hidden="true" value="" /><input id="popupNotificationForm:popup-notification-modal_left" name="popupNotificationForm:popup-notification-modal_left" hidden="true" value="" /><input id="popupNotificationForm:popup-notification-modal_width" name="popupNotificationForm:popup-notification-modal_width" hidden="true" value="" /><input id="popupNotificationForm:popup-notification-modal_height" name="popupNotificationForm:popup-notification-modal_height" hidden="true" value="" /><div class="modal-dialog modal-md"><div class="modal-content"><div class="modal-header"><button type="button" class="close" onclick="Moses.Component.Modal.decline('popupNotificationForm:popup-notification-modal')" aria-label="Abbrechen"><span aria-hidden="aria-hidden" class="ic-close-big ic-fw"></span></button><h4 class="modal-title"></h4></div><div class="modal-body"></div></div></div><script>Moses.Component.Modal.restore('popupNotificationForm:popup-notification-modal', {'backdrop':'true','keyboard':true,'draggable':false,'dragged':false,'styleTop':'','styleLeft':'','resizable':false,'resized':false,'styleWidth':'','styleHeight':'','collapse':false,'show':false})</script></div><input type="hidden" name="jakarta.faces.ViewState" id="j_id1:jakarta.faces.ViewState:2" value="-5754495619677104771:7835854346271690221" autocomplete="off" /><input type="hidden" name="jakarta.faces.ClientWindow" id="j_id1:jakarta.faces.ClientWindow:2" value="ab5a42a5-9b78-470b-a3cf-371abe7df188:4" autocomplete="off" />
+</form>
+
+
+    <div id="loading-indicator"></div>
+
+    <header id="header">
+        <a href="https://moseskonto.tu-berlin.de/moses/index.html" id="header-logo">
+            <img src="/moses/docs/images/template/university-logo.svg" alt="Technische Universität Berlin Logo" />
+        </a>
+
+        <nav id="nav-top"></nav>
+    </header>
+
+    <div id="header-border"></div>
+
+
+    <aside id="aside">
+        <nav id="nav-aside"></nav>
+    </aside>
+
+    <main id="content" class="container-fluid"><div id="page-title" class="page-header">
+
+            <ol class="breadcrumb">
+                    <li><a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/index.html">Modulverzeichnis (MTS)</a>
+                    </li>
+                    <li><a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/index.html">Module</a>
+                    </li>
+                    <li><a href="#">Modulbeschreibung anzeigen</a>
+                    </li>
+            </ol>
+
+            <h1>Algorithmen und Datenstrukturen
+            </h1></div>
+        <style type="text/css">
+            .equal {
+                display: flex;
+                display: -webkit-flex;
+                flex-wrap: wrap;
+            }
+
+            .card {
+                padding: 1.75rem;
+                border: 1px solid rgba(0, 0, 0, .125);
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+
+            .cardWithSameHeight {
+                height: calc(100% - 20px);
+            }
+
+            h3 {
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+
+            .preformatedTextarea {
+                white-space: pre-wrap;
+                white-space: -moz-pre-wrap;
+                white-space: -pre-wrap;
+                white-space: -o-pre-wrap;
+                word-wrap: break-word;
+            }
+        </style>
+<form id="j_idt59" name="j_idt59" method="post" action="/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?jfwid=ab5a42a5-9b78-470b-a3cf-371abe7df188:4" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="j_idt59" value="j_idt59" />
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group" style="text-align: right;"><span id="j_idt59:optionbuttons"><a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/ansehen.html?number=40022" class="btn btn-default fa-space"> <span class="fa fa-mail-reply fa-space"></span>Zur Modulseite
+                                </a><a id="j_idt59:j_idt72" href="#" class="ui-commandlink ui-widget btn btn-default fa-space" onclick="PrimeFaces.ab({s:&quot;j_idt59:j_idt72&quot;,f:&quot;j_idt59&quot;,u:&quot;j_idt59&quot;});return false;"><span class="fa fa-file-pdf-o fa-space"></span>PDF generieren
+                                </a><script id="j_idt59:j_idt72_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandLink","widget_j_idt59_j_idt72",{id:"j_idt59:j_idt72"});});</script></span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12"><div id="j_idt59:j_idt77" class="ui-messages ui-widget" aria-live="polite"></div><script id="j_idt59:j_idt77_s" type="text/javascript">$(function(){PrimeFaces.cw("Messages","widget_j_idt59_j_idt77",{id:"j_idt59:j_idt77"});});</script>
+                        <div style="border-bottom: 1px solid #eeeeee; margin-bottom: 15px;"></div>
+                    </div>
+                </div>
+
+    <div class="row equal">
+
+        <div class="col-xs-12 col-md-6">
+            <div class="card cardWithSameHeight">
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                        <div class="form-group">
+                            <label>Modul / Version</label>
+                            <br />#40022 /
+                            #11
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-8 col-lg-4">
+                        <div class="form-group">
+                            <label>Gültigkeit</label><br />Seit SoSe 2026
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-lg-4">
+                        <div class="form-group">
+                            <label>Verfügbare Sprache(n)</label><br />Deutsch, Englisch
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label>Titel des Moduls</label><br /><span style="font-size: xx-large;">Algorithmen und Datenstrukturen</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-md-4">
+                        <div class="form-group">
+                            <label>Leistungspunkte</label><br /><span style="font-size: x-large;">6</span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-8">
+                        <div class="form-group">
+                            <label>Modulverantwortliche*r</label><br /><span style="font-size: x-large;">Blankertz, Benjamin</span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-4">
+                        <div class="form-group">
+                            <label>Benotung</label><br /><span style="font-size: x-large;">Benotet</span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-8 col-lg-4">
+                        <div class="form-group">
+                            <label>Prüfungsform</label><br /><span style="font-size: x-large;">Schriftliche Prüfung</span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-12 col-lg-4">
+                        <div class="form-group">
+                            <label>Lehrsprache(n)</label><br /><span style="font-size: x-large;">Deutsch</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-3">
+            <div class="card cardWithSameHeight">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3><span class="fa fa-university fa-space"></span>Zugehörigkeit</h3>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label>Fakultät</label><br />Fakultät IV
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label>Institut</label>
+                            <br />Institut für Softwaretechnik und Theoretische Informatik
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label>Fachgebiet</label>
+                            <br />34355200 FG S-Professur Neurotechnologie
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label>Prüfungsausschuss</label><br /><span style="font-style: italic; font-size: small;">Keine Angabe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-3">
+            <div class="card cardWithSameHeight">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3><span class="fa fa-support fa-space"></span>Kontakt</h3>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label>Sekretariat</label><br />MAR 5-1
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label>Ansprechpartner*in</label><br />Pfisterer, Adrian
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label>E-Mail-Adresse</label><br />algodat@robotics.tu-berlin.de
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label>Webseite</label><br /><a href="http://www.robotics.tu-berlin.de/menue/teaching/" target="_blank">
+                                <div style="width: 98%; text-wrap: normal; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><span title="http://www.robotics.tu-berlin.de/menue/teaching/">http://www.robotics.tu-berlin.de/menue/teaching/</span>
+                                </div></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Lernergebnisse</h3>
+                    </div>
+
+                    <div class="col-xs-12"><span class="preformatedTextarea">Die Studierenden haben Kenntnisse der wesentlichen Datenstrukturen und Algorithmen. Sie sind in der Lage, geeignete Algorithmen und Datenstrukturen für ein gegebenes Problem auszuwählen. Sie haben ein Bewusstsein für die Wichtigkeit von Effizienz der Algorithmen im Sinne der Nachhaltigkeit. Die Studierenden haben Grundkenntnisse der objektorientierten Programmierung und die Fähigkeit, Algorithmen effizient zu implementieren und auf Problemstellungen anzuwenden.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Lehrinhalte</h3>
+                    </div>
+
+                    <div class="col-xs-12"><span class="preformatedTextarea">* Einführung in Objekt-orientierte Programmierung in Java
+* Wachstumsordnungen, Komplextitätsklassen, Big-O Notation
+* Backtracking 
+* Greedy-Algorithmen
+* Branch-and-Bound, Alpha-Beta-Suche
+* Randomisierte Algorithmen
+* Dynamisches Programmieren
+* Tiefen- und Breitensuche auf Graphen, Topologische Sortierung
+* Minimale Spannbäume
+* Kürzeste Wege (SSSP)
+* Flussgraphen, MaxFlow und MinCut
+* Heuristische und Approximative Algorithmen
+* Hash-Tabellen</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div><span id="j_idt59:BoxBestandteile">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="card">
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Modulbestandteile</h3>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                                    <h4>Pflichtbereich
+                                    </h4>
+                                    <p>Die folgenden Veranstaltungen sind für das Modul obligatorisch:
+                                    </p>
+
+                                    <div class="form-group"><div id="j_idt59:j_idt258:0:j_idt277" class="ui-datatable ui-widget"><div class="ui-datatable-tablewrapper"><table role="grid" class="table"><thead id="j_idt59:j_idt258:0:j_idt277_head"><tr><th id="j_idt59:j_idt258:0:j_idt277:j_idt278" class="ui-state-default" aria-label="Lehrveranstaltungen" scope="col"><span class="ui-column-title">Lehrveranstaltungen</span></th><th id="j_idt59:j_idt258:0:j_idt277:j_idt285" class="ui-state-default" aria-label="Art" scope="col" style="text-align: left; width: 80px;"><span class="ui-column-title">Art</span></th><th id="j_idt59:j_idt258:0:j_idt277:j_idt287" class="ui-state-default" aria-label="Nummer" scope="col" style="text-align: left; width: 110px;"><span class="ui-column-title">Nummer</span></th><th id="j_idt59:j_idt258:0:j_idt277:j_idt289" class="ui-state-default" aria-label="Turnus" scope="col" style="text-align: left; width: 110px;"><span class="ui-column-title">Turnus</span></th><th id="j_idt59:j_idt258:0:j_idt277:j_idt291" class="ui-state-default" aria-label="Sprache" scope="col" style="text-align: left; width: 150px;"><span class="ui-column-title">Sprache</span></th><th id="j_idt59:j_idt258:0:j_idt277:j_idt294" class="ui-state-default" aria-label="SWS" scope="col" style="text-align: center; width: 80px;"><span class="ui-column-title">SWS</span></th><th id="j_idt59:j_idt258:0:j_idt277:j_idt296" class="ui-state-default" scope="col" style="text-align: center; width: 40px;"><span class="ui-column-title">
+                                                    <span title="ISIS-Kurssuche">ISIS</span></span></th><th id="j_idt59:j_idt258:0:j_idt277:j_idt301" class="ui-state-default" scope="col" style="text-align: center; width: 40px;"><span class="ui-column-title">
+                                                    <span title="Moses-Vorlesungsverzeichnis">VVZ</span></span></th></tr></thead><tbody id="j_idt59:j_idt258:0:j_idt277_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even"><td role="gridcell">Algorithmen und Datenstrukturen</td><td role="gridcell" style="text-align: left; width: 80px;"><span title="Vorlesung">VL</span></td><td role="gridcell" style="text-align: left; width: 110px;">0432 L 210</td><td role="gridcell" style="text-align: left; width: 110px;"><span title="Sommersemester">SoSe</span></td><td role="gridcell" style="text-align: left; width: 150px;"><span title="de">de</span></td><td role="gridcell" style="text-align: center; width: 80px;"><span title="2 Semesterwochenstunden">2</span></td><td role="gridcell" style="text-align: center; width: 40px;"><a href="https://isis.tu-berlin.de/local/coursemanager/search.php?lvvid=5417" target="_blank" class="btn btn-default btn-xs">
+                                                    <span class="fa fam-search fa-fw" title="In ISIS nach Kursen zu dieser Veranstaltung suchen"></span></a></td><td role="gridcell" style="text-align: center; width: 40px;"><a href="https://moseskonto.tu-berlin.de/moses/verzeichnis/veranstaltungen/vorlage.html?veranstaltungsvorlage=5417&amp;extended=false&amp;search=true" target="_blank" class="btn btn-default btn-xs">
+                                                    <span class="fa fa-calendar fa-fw" title="Im Verzeichnis nach Veranstaltung suchen"></span></a></td></tr><tr data-ri="1" class="ui-widget-content ui-datatable-odd"><td role="gridcell">Algorithmen und Datenstrukturen</td><td role="gridcell" style="text-align: left; width: 80px;"><span title="Übung">UE</span></td><td role="gridcell" style="text-align: left; width: 110px;">0432 L 210T</td><td role="gridcell" style="text-align: left; width: 110px;"><span title="Sommersemester">SoSe</span></td><td role="gridcell" style="text-align: left; width: 150px;"><span title="de">de</span></td><td role="gridcell" style="text-align: center; width: 80px;"><span title="2 Semesterwochenstunden">2</span></td><td role="gridcell" style="text-align: center; width: 40px;"><a href="https://isis.tu-berlin.de/local/coursemanager/search.php?lvvid=5418" target="_blank" class="btn btn-default btn-xs">
+                                                    <span class="fa fam-search fa-fw" title="In ISIS nach Kursen zu dieser Veranstaltung suchen"></span></a></td><td role="gridcell" style="text-align: center; width: 40px;"><a href="https://moseskonto.tu-berlin.de/moses/verzeichnis/veranstaltungen/vorlage.html?veranstaltungsvorlage=5418&amp;extended=false&amp;search=true" target="_blank" class="btn btn-default btn-xs">
+                                                    <span class="fa fa-calendar fa-fw" title="Im Verzeichnis nach Veranstaltung suchen"></span></a></td></tr></tbody></table></div></div><script id="j_idt59:j_idt258:0:j_idt277_s" type="text/javascript">$(function(){PrimeFaces.cw("DataTable","widget_j_idt59_j_idt258_0_j_idt277",{id:"j_idt59:j_idt258:0:j_idt277",groupColumnIndexes:[],disableContextMenuIfEmpty:false});});</script>
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12" style="text-align: right; margin-bottom: 0px;"><a href="https://isis.tu-berlin.de/local/coursemanager/search.php?modulenumber=40022" target="_blank" class="btn btn-default"> <span class="fa fam-search fa-space"></span>ISIS-Kurssuche nach Veranstaltungen des Moduls
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div></span>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Arbeitsaufwand und Leistungspunkte</h3>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="row">
+                                    <div class="col-xs-12">
+                                        <h4>Algorithmen und Datenstrukturen (VL):
+                                        </h4>
+
+                                        <div class="form-group"><div id="j_idt59:j_idt320:0:j_idt325" class="ui-datatable ui-widget"><div class="ui-datatable-tablewrapper"><table role="grid" class="table"><thead id="j_idt59:j_idt320:0:j_idt325_head"><tr><th id="j_idt59:j_idt320:0:j_idt325:j_idt326" class="ui-state-default" aria-label="Aufwandbeschreibung" scope="col"><span class="ui-column-title">Aufwandbeschreibung</span></th><th id="j_idt59:j_idt320:0:j_idt325:j_idt329" class="ui-state-default" aria-label="Multiplikator" scope="col" style="width: 160px;"><span class="ui-column-title">Multiplikator</span></th><th id="j_idt59:j_idt320:0:j_idt325:j_idt331" class="ui-state-default" aria-label="Stunden" scope="col" style="width: 160px;"><span class="ui-column-title">Stunden</span></th><th id="j_idt59:j_idt320:0:j_idt325:j_idt333" class="ui-state-default" aria-label="Gesamt" scope="col" style="width: 160px;"><span class="ui-column-title">Gesamt</span></th></tr></thead><tbody id="j_idt59:j_idt320:0:j_idt325_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even"><td role="gridcell">Präsenzzeit</td><td role="gridcell" style="width: 160px;">15.0</td><td role="gridcell" style="width: 160px;">2.0h</td><td role="gridcell" style="width: 160px;">30.0h</td></tr><tr data-ri="1" class="ui-widget-content ui-datatable-odd"><td role="gridcell">Vor-/Nachbereitung</td><td role="gridcell" style="width: 160px;">15.0</td><td role="gridcell" style="width: 160px;">2.0h</td><td role="gridcell" style="width: 160px;">30.0h</td></tr></tbody><tfoot id="j_idt59:j_idt320:0:j_idt325_foot"><tr><td class="ui-state-default"></td><td class="ui-state-default" style="width: 160px;"></td><td class="ui-state-default" style="width: 160px;"></td><td class="ui-state-default" style="width: 160px;">60.0h<span style="font-size: x-small;">(~2 LP)</span></td></tr></tfoot></table></div></div><script id="j_idt59:j_idt320:0:j_idt325_s" type="text/javascript">$(function(){PrimeFaces.cw("DataTable","widget_j_idt59_j_idt320_0_j_idt325",{id:"j_idt59:j_idt320:0:j_idt325",groupColumnIndexes:[],disableContextMenuIfEmpty:false});});</script>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <h4>Algorithmen und Datenstrukturen (UE):
+                                        </h4>
+
+                                        <div class="form-group"><div id="j_idt59:j_idt320:1:j_idt325" class="ui-datatable ui-widget"><div class="ui-datatable-tablewrapper"><table role="grid" class="table"><thead id="j_idt59:j_idt320:1:j_idt325_head"><tr><th id="j_idt59:j_idt320:1:j_idt325:j_idt326" class="ui-state-default" aria-label="Aufwandbeschreibung" scope="col"><span class="ui-column-title">Aufwandbeschreibung</span></th><th id="j_idt59:j_idt320:1:j_idt325:j_idt329" class="ui-state-default" aria-label="Multiplikator" scope="col" style="width: 160px;"><span class="ui-column-title">Multiplikator</span></th><th id="j_idt59:j_idt320:1:j_idt325:j_idt331" class="ui-state-default" aria-label="Stunden" scope="col" style="width: 160px;"><span class="ui-column-title">Stunden</span></th><th id="j_idt59:j_idt320:1:j_idt325:j_idt333" class="ui-state-default" aria-label="Gesamt" scope="col" style="width: 160px;"><span class="ui-column-title">Gesamt</span></th></tr></thead><tbody id="j_idt59:j_idt320:1:j_idt325_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even"><td role="gridcell">Präsenzzeit</td><td role="gridcell" style="width: 160px;">15.0</td><td role="gridcell" style="width: 160px;">2.0h</td><td role="gridcell" style="width: 160px;">30.0h</td></tr><tr data-ri="1" class="ui-widget-content ui-datatable-odd"><td role="gridcell">Vor-/Nachbereitung</td><td role="gridcell" style="width: 160px;">15.0</td><td role="gridcell" style="width: 160px;">2.0h</td><td role="gridcell" style="width: 160px;">30.0h</td></tr></tbody><tfoot id="j_idt59:j_idt320:1:j_idt325_foot"><tr><td class="ui-state-default"></td><td class="ui-state-default" style="width: 160px;"></td><td class="ui-state-default" style="width: 160px;"></td><td class="ui-state-default" style="width: 160px;">60.0h<span style="font-size: x-small;">(~2 LP)</span></td></tr></tfoot></table></div></div><script id="j_idt59:j_idt320:1:j_idt325_s" type="text/javascript">$(function(){PrimeFaces.cw("DataTable","widget_j_idt59_j_idt320_1_j_idt325",{id:"j_idt59:j_idt320:1:j_idt325",groupColumnIndexes:[],disableContextMenuIfEmpty:false});});</script>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <h4>Lehrveranstaltungsunabhängiger Aufwand:
+                                        </h4>
+
+                                        <div class="form-group"><div id="j_idt59:j_idt320:2:j_idt325" class="ui-datatable ui-widget"><div class="ui-datatable-tablewrapper"><table role="grid" class="table"><thead id="j_idt59:j_idt320:2:j_idt325_head"><tr><th id="j_idt59:j_idt320:2:j_idt325:j_idt326" class="ui-state-default" aria-label="Aufwandbeschreibung" scope="col"><span class="ui-column-title">Aufwandbeschreibung</span></th><th id="j_idt59:j_idt320:2:j_idt325:j_idt329" class="ui-state-default" aria-label="Multiplikator" scope="col" style="width: 160px;"><span class="ui-column-title">Multiplikator</span></th><th id="j_idt59:j_idt320:2:j_idt325:j_idt331" class="ui-state-default" aria-label="Stunden" scope="col" style="width: 160px;"><span class="ui-column-title">Stunden</span></th><th id="j_idt59:j_idt320:2:j_idt325:j_idt333" class="ui-state-default" aria-label="Gesamt" scope="col" style="width: 160px;"><span class="ui-column-title">Gesamt</span></th></tr></thead><tbody id="j_idt59:j_idt320:2:j_idt325_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even"><td role="gridcell">Prüfungsvorbereitung</td><td role="gridcell" style="width: 160px;">1.0</td><td role="gridcell" style="width: 160px;">60.0h</td><td role="gridcell" style="width: 160px;">60.0h</td></tr></tbody><tfoot id="j_idt59:j_idt320:2:j_idt325_foot"><tr><td class="ui-state-default"></td><td class="ui-state-default" style="width: 160px;"></td><td class="ui-state-default" style="width: 160px;"></td><td class="ui-state-default" style="width: 160px;">60.0h<span style="font-size: x-small;">(~2 LP)</span></td></tr></tfoot></table></div></div><script id="j_idt59:j_idt320:2:j_idt325_s" type="text/javascript">$(function(){PrimeFaces.cw("DataTable","widget_j_idt59_j_idt320_2_j_idt325",{id:"j_idt59:j_idt320:2:j_idt325",groupColumnIndexes:[],disableContextMenuIfEmpty:false});});</script>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <em>
+                            Der Aufwand des Moduls summiert sich zu <strong>180.0 Stunden</strong>. Damit umfasst das Modul <strong>6 Leistungspunkte</strong>.
+                        </em>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Beschreibung der Lehr- und Lernformen</h3>
+                    </div>
+
+                    <div class="col-xs-12"><span class="preformatedTextarea">Vorlesung zur Stoffvermittlung mit begleitenden wöchentlichen Übungen zur Festigung und Einübung. Die Bearbeitung von Übungsblättern und Programmieraufgaben erfolgt in Einzelarbeit. Des Weiteren stehen ein digitales Skript und Videos zum Selbststudium zur Verfügung.</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Voraussetzungen für die Teilnahme / Prüfung</h3>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <h4>Wünschenswerte Voraussetzungen für die Teilnahme an den <strong>Lehrveranstaltungen</strong>:</h4><span class="preformatedTextarea">Kenntnisse im Rahmen des Moduls „Einführung in die Programmierung“</span>
+                    </div>
+
+                    <div class="col-xs-12" style="margin-top: 20px;">
+                        <h4>Verpflichtende Voraussetzungen für die <strong>Modulprüfungsanmeldung</strong>:</h4>
+                                <div class="row"><span id="j_idt59:voraussetzungstabelle">
+                                        <div class="col-xs-12">
+                                            <div class="form-group"><div id="j_idt59:j_idt359" class="ui-datatable ui-widget"><div class="ui-datatable-tablewrapper"><table role="grid" class="table"><thead id="j_idt59:j_idt359_head"><tr><th id="j_idt59:j_idt359:j_idt360" class="ui-state-default" aria-label="Voraussetzung" scope="col"><span class="ui-column-title">Voraussetzung</span></th></tr></thead><tbody id="j_idt59:j_idt359_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even"><td role="gridcell">Leistungsnachweis
+                                                                    »<span style="font-style: italic;">[RBO] Erreichen von mindestens 60% der Punkte in einer Zwischenprüfung</span>«
+                                                                </td></tr></tbody></table></div></div><script id="j_idt59:j_idt359_s" type="text/javascript">$(function(){PrimeFaces.cw("DataTable","widget_j_idt59_j_idt359",{id:"j_idt59:j_idt359",groupColumnIndexes:[],disableContextMenuIfEmpty:false});});</script>
+                                            </div>
+                                        </div></span>
+                                </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Abschluss des Moduls</h3>
+                    </div>
+
+                    <div class="col-xs-12 col-md-3">
+                        <div class="form-group">
+                            <h4><span class="fa fa-star-half-o fa-space"></span>Benotung</h4>Benotet
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3">
+                        <div class="form-group">
+                            <h4><span class="fa fa-legal fa-space"></span>Prüfungsform</h4>Schriftliche Prüfung
+                        </div>
+                    </div>
+                        <div class="col-xs-12 col-md-3">
+                            <div class="form-group">
+                                <h4><span class="fa fa-globe fa-space"></span>Sprache(n)</h4>Deutsch
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <h4><span class="fa fa-clock-o fa-space"></span>Dauer/Umfang</h4><span class="preformatedTextarea">90 Minuten</span>
+                        </div>
+                        <div class="col-xs-12" style="margin-top: 20px;">
+                            <h4><span class="fa fa-align-left fa-space"></span>Prüfungsbeschreibung (Abschluss des Moduls)</h4><span class="preformatedTextarea">Die unbenotete Zwischenprüfung findet während der Vorlesungszeit statt. Das Bestehen der Zwischenprüfung ist Voraussetzung für die Klausurzulassung. Der schriftliche Test findet nach Ende der Vorlesungszeit statt.</span>
+                        </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Dauer des Moduls</h3>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <p>
+                            Für Belegung und Abschluss des Moduls ist folgende Semesteranzahl veranschlagt: <br />
+                                <strong>1 Semester</strong>.
+                            
+                        </p>
+                        <p>
+                            Dieses Modul kann in folgenden Semestern begonnen werden: <br />
+                                <strong>Sommersemester</strong>.
+                            
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Maximale teilnehmende Personen</h3>
+                    </div>
+
+                    <div class="col-xs-12">Dieses Modul ist nicht auf eine Anzahl Studierender begrenzt.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Anmeldeformalitäten</h3>
+                    </div>
+
+                    <div class="col-xs-12"><span class="preformatedTextarea">Die Einteilung der Übungen erfolgt über MOSES in der ersten Vorlesungswoche. Die An- und Abmeldefristen werden in der Vorlesung bekannt gegeben.</span>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Literaturhinweise, Skripte</h3>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <h4><span class="fa fa-file-text-o fa-space"></span>Skript in Papierform</h4>Verfügbarkeit: 
+                        
+                            <span class="fa fa-times fa-space" title="nicht verfügbar" style="color: darkred;"></span><span style="color: darkred;">nicht verfügbar</span>
+                        <p> </p>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <h4><span class="fa fa-file-text fa-space"></span>Skript in elektronischer Form</h4>Verfügbarkeit: 
+                        
+                            <span class="fa fa-check fa-space" title="verfügbar" style="color: darkgreen;"></span><span style="color: darkgreen;">verfügbar</span><div style="margin-top: 5px;"><span style="font-style: italic;">Zusätzliche Informationen:</span><br /><span class="preformatedTextarea">Siehe ISIS Seite</span></div>
+                        <p> </p>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4><span class="fa fa-book fa-space"></span>Literatur</h4>
+                        <div class="form-group"><div id="j_idt59:j_idt547" class="ui-datatable ui-widget"><div class="ui-datatable-tablewrapper"><table role="grid" class="table"><thead id="j_idt59:j_idt547_head"><tr><th id="j_idt59:j_idt547:j_idt548" class="ui-state-default" aria-label="Empfohlene Literatur" scope="col"><span class="ui-column-title">Empfohlene Literatur</span></th></tr></thead><tbody id="j_idt59:j_idt547_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even"><td role="gridcell">Blankertz B, Röhr V, Algorithmen und Datenstrukturen, Skript zur Vorlesung, 2020.</td></tr><tr data-ri="1" class="ui-widget-content ui-datatable-odd"><td role="gridcell">Segdewick R, Wayne K, Algorithmen: Algorithmen und Datenstrukturen. Pearson Studium, 4. Auflage, 2014. <a href="https://tu-berlin.hosted.exlibrisgroup.com/primo-explore/search?query=isbn%2Ccontains%2C9783868941845&amp;tab=tub_all&amp;search_scope=TUB_ALL&amp;vid=TUB&amp;lang=de_DE" target="_blank">ISBN-13: 9783868941845</a></td></tr><tr data-ri="2" class="ui-widget-content ui-datatable-even"><td role="gridcell">Ottmann T, Widmayer P, Algorithmen und Datenstrukturen. Springer Verlag, 5. Auflage; 2011. <a href="https://tu-berlin.hosted.exlibrisgroup.com/primo-explore/search?query=isbn%2Ccontains%2C9783827428042&amp;tab=tub_all&amp;search_scope=TUB_ALL&amp;vid=TUB&amp;lang=de_DE" target="_blank">ISBN-13: 9783827428042</a>.</td></tr><tr data-ri="3" class="ui-widget-content ui-datatable-odd"><td role="gridcell">Cormen TH, Leiserson CE, Rivest R, Stein C, Algorithmen - Eine Einführung. De Gruyter Oldenbourg, 4. Auflage; 2013. <a href="https://tu-berlin.hosted.exlibrisgroup.com/primo-explore/search?query=isbn%2Ccontains%2C9783486748611&amp;tab=tub_all&amp;search_scope=TUB_ALL&amp;vid=TUB&amp;lang=de_DE" target="_blank">ISBN-13: 9783486748611</a>.</td></tr><tr data-ri="4" class="ui-widget-content ui-datatable-even"><td role="gridcell">Ullenboom C, Java ist auch eine Insel. http://openbook.rheinwerk-verlag.de/javainsel</td></tr><tr data-ri="5" class="ui-widget-content ui-datatable-odd"><td role="gridcell">Sedgewick R, Wayne K, Introduction to Programming in Java: An Interdisciplinary Approach. https://introcs.cs.princeton.edu/java</td></tr></tbody></table></div></div><script id="j_idt59:j_idt547_s" type="text/javascript">$(function(){PrimeFaces.cw("DataTable","widget_j_idt59_j_idt547",{id:"j_idt59:j_idt547",groupColumnIndexes:[],disableContextMenuIfEmpty:false});});</script>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div><span id="j_idt59:BoxVerwendbarkeit">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="card">
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Zugeordnete Studiengänge</h3>
+                        </div>
+                    </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-4 col-lg-3">
+                                <div class="form-group">
+                                    <label>Semester:</label><br /><select id="j_idt59:j_idt564" name="j_idt59:j_idt564" class="form-control" size="1" onchange="PrimeFaces.ab({s:this,e:&quot;change&quot;,f:&quot;j_idt59&quot;,p:&quot;j_idt59:BoxVerwendbarkeit&quot;,u:&quot;j_idt59:BoxVerwendbarkeit&quot;});">	<option value="76" selected="selected">SoSe 2026</option>
+	<option value="77">WiSe 2026/27</option>
+</select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label><input id="j_idt59:j_idt567" type="checkbox" name="j_idt59:j_idt567" onclick="PrimeFaces.ab({s:this,e:&quot;valueChange&quot;,f:&quot;j_idt59&quot;,p:&quot;j_idt59:BoxVerwendbarkeit&quot;,u:&quot;j_idt59:BoxVerwendbarkeit&quot;});" />
+                                            Zeige auch ausgelaufene Studiengänge und StuPOs
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Diese Modulversion wird in folgenden Studiengängen verwendet:</h4>
+                                <div class="form-group"><div id="j_idt59:j_idt569" class="ui-datatable ui-widget"><div class="ui-datatable-tablewrapper"><table role="grid" class="table"><thead id="j_idt59:j_idt569_head"><tr><th id="j_idt59:j_idt569:j_idt570" class="ui-state-default" scope="col" style="vertical-align: top; text-align: center; width: 15px;"><span class="ui-column-title"><a id="j_idt59:j_idt569:j_idt571" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt59:j_idt569:j_idt571&quot;,f:&quot;j_idt59&quot;,p:&quot;j_idt59:BoxVerwendbarkeit&quot;,u:&quot;j_idt59:BoxVerwendbarkeit&quot;});return false;">
+                                                    <span class="fa fa-plus-square-o"></span></a><script id="j_idt59:j_idt569:j_idt571_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandLink","widget_j_idt59_j_idt569_j_idt571",{id:"j_idt59:j_idt569:j_idt571"});});</script></span></th><th id="j_idt59:j_idt569:j_idt580" class="ui-state-default" aria-label="Studiengang / StuPO" scope="col" style="vertical-align: top;"><span class="ui-column-title">Studiengang / StuPO</span></th><th id="j_idt59:j_idt569:j_idt589" class="ui-state-default" aria-label="StuPOs" scope="col" style="vertical-align: top;"><span class="ui-column-title">StuPOs</span></th><th id="j_idt59:j_idt569:j_idt591" class="ui-state-default" aria-label="Verwendungen" scope="col" style="vertical-align: top;"><span class="ui-column-title">Verwendungen</span></th><th id="j_idt59:j_idt569:j_idt593" class="ui-state-default" aria-label="Erste Verwendung" scope="col" style="vertical-align: top;"><span class="ui-column-title">Erste Verwendung</span></th><th id="j_idt59:j_idt569:j_idt595" class="ui-state-default" aria-label="Letzte Verwendung" scope="col" style="vertical-align: top;"><span class="ui-column-title">Letzte Verwendung</span></th></tr></thead><tbody id="j_idt59:j_idt569_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even"><td role="gridcell" style="vertical-align: top; text-align: center; width: 15px;"><a id="j_idt59:j_idt569:0:j_idt576" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt59:j_idt569:0:j_idt576&quot;,f:&quot;j_idt59&quot;,p:&quot;j_idt59:BoxVerwendbarkeit&quot;,u:&quot;j_idt59:BoxVerwendbarkeit&quot;});return false;">
+                                                    <span class="fa fa-plus-square-o"></span></a><script id="j_idt59:j_idt569:0:j_idt576_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandLink","widget_j_idt59_j_idt569_0_j_idt576",{id:"j_idt59:j_idt569:0:j_idt576"});});</script></td><td role="gridcell" style="vertical-align: top;"><a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/studiengaenge/anzeigen.html?studiengang=56" target="_blank">Computational Engineering Science (Informationstechnik im Maschinenwesen) (B. Sc.)</a></td><td role="gridcell" style="vertical-align: top;">1</td><td role="gridcell" style="vertical-align: top;">1</td><td role="gridcell" style="vertical-align: top;">SoSe 2026</td><td role="gridcell" style="vertical-align: top;">SoSe 2026</td></tr><tr data-ri="1" class="ui-widget-content ui-datatable-odd"><td role="gridcell" style="vertical-align: top; text-align: center; width: 15px;"><a id="j_idt59:j_idt569:1:j_idt576" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt59:j_idt569:1:j_idt576&quot;,f:&quot;j_idt59&quot;,p:&quot;j_idt59:BoxVerwendbarkeit&quot;,u:&quot;j_idt59:BoxVerwendbarkeit&quot;});return false;">
+                                                    <span class="fa fa-plus-square-o"></span></a><script id="j_idt59:j_idt569:1:j_idt576_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandLink","widget_j_idt59_j_idt569_1_j_idt576",{id:"j_idt59:j_idt569:1:j_idt576"});});</script></td><td role="gridcell" style="vertical-align: top;"><a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/studiengaenge/anzeigen.html?studiengang=181" target="_blank">Elektrotechnik/Informationstechnik als Quereinstieg (Lehramt) (M. Ed.)</a></td><td role="gridcell" style="vertical-align: top;">1</td><td role="gridcell" style="vertical-align: top;">2</td><td role="gridcell" style="vertical-align: top;">SoSe 2026</td><td role="gridcell" style="vertical-align: top;">WiSe 2026/27</td></tr><tr data-ri="2" class="ui-widget-content ui-datatable-even"><td role="gridcell" style="vertical-align: top; text-align: center; width: 15px;"><a id="j_idt59:j_idt569:2:j_idt576" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt59:j_idt569:2:j_idt576&quot;,f:&quot;j_idt59&quot;,p:&quot;j_idt59:BoxVerwendbarkeit&quot;,u:&quot;j_idt59:BoxVerwendbarkeit&quot;});return false;">
+                                                    <span class="fa fa-plus-square-o"></span></a><script id="j_idt59:j_idt569:2:j_idt576_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandLink","widget_j_idt59_j_idt569_2_j_idt576",{id:"j_idt59:j_idt569:2:j_idt576"});});</script></td><td role="gridcell" style="vertical-align: top;"><a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/studiengaenge/anzeigen.html?studiengang=31" target="_blank">Informatik (B. Sc.)</a></td><td role="gridcell" style="vertical-align: top;">1</td><td role="gridcell" style="vertical-align: top;">1</td><td role="gridcell" style="vertical-align: top;">SoSe 2026</td><td role="gridcell" style="vertical-align: top;">SoSe 2026</td></tr><tr data-ri="3" class="ui-widget-content ui-datatable-odd"><td role="gridcell" style="vertical-align: top; text-align: center; width: 15px;"><a id="j_idt59:j_idt569:3:j_idt576" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt59:j_idt569:3:j_idt576&quot;,f:&quot;j_idt59&quot;,p:&quot;j_idt59:BoxVerwendbarkeit&quot;,u:&quot;j_idt59:BoxVerwendbarkeit&quot;});return false;">
+                                                    <span class="fa fa-plus-square-o"></span></a><script id="j_idt59:j_idt569:3:j_idt576_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandLink","widget_j_idt59_j_idt569_3_j_idt576",{id:"j_idt59:j_idt569:3:j_idt576"});});</script></td><td role="gridcell" style="vertical-align: top;"><a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/studiengaenge/anzeigen.html?studiengang=178" target="_blank">Informationstechnik (Lehramt) (B. Sc.)</a></td><td role="gridcell" style="vertical-align: top;">2</td><td role="gridcell" style="vertical-align: top;">4</td><td role="gridcell" style="vertical-align: top;">SoSe 2026</td><td role="gridcell" style="vertical-align: top;">WiSe 2026/27</td></tr><tr data-ri="4" class="ui-widget-content ui-datatable-even"><td role="gridcell" style="vertical-align: top; text-align: center; width: 15px;"><a id="j_idt59:j_idt569:4:j_idt576" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt59:j_idt569:4:j_idt576&quot;,f:&quot;j_idt59&quot;,p:&quot;j_idt59:BoxVerwendbarkeit&quot;,u:&quot;j_idt59:BoxVerwendbarkeit&quot;});return false;">
+                                                    <span class="fa fa-plus-square-o"></span></a><script id="j_idt59:j_idt569:4:j_idt576_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandLink","widget_j_idt59_j_idt569_4_j_idt576",{id:"j_idt59:j_idt569:4:j_idt576"});});</script></td><td role="gridcell" style="vertical-align: top;"><a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/studiengaenge/anzeigen.html?studiengang=150" target="_blank">Medieninformatik (B. Sc.)</a></td><td role="gridcell" style="vertical-align: top;">1</td><td role="gridcell" style="vertical-align: top;">1</td><td role="gridcell" style="vertical-align: top;">SoSe 2026</td><td role="gridcell" style="vertical-align: top;">SoSe 2026</td></tr><tr data-ri="5" class="ui-widget-content ui-datatable-odd"><td role="gridcell" style="vertical-align: top; text-align: center; width: 15px;"><a id="j_idt59:j_idt569:5:j_idt576" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt59:j_idt569:5:j_idt576&quot;,f:&quot;j_idt59&quot;,p:&quot;j_idt59:BoxVerwendbarkeit&quot;,u:&quot;j_idt59:BoxVerwendbarkeit&quot;});return false;">
+                                                    <span class="fa fa-plus-square-o"></span></a><script id="j_idt59:j_idt569:5:j_idt576_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandLink","widget_j_idt59_j_idt569_5_j_idt576",{id:"j_idt59:j_idt569:5:j_idt576"});});</script></td><td role="gridcell" style="vertical-align: top;"><a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/studiengaenge/anzeigen.html?studiengang=234" target="_blank">Medientechnik (B. Sc.)</a></td><td role="gridcell" style="vertical-align: top;">1</td><td role="gridcell" style="vertical-align: top;">1</td><td role="gridcell" style="vertical-align: top;">SoSe 2026</td><td role="gridcell" style="vertical-align: top;">SoSe 2026</td></tr><tr data-ri="6" class="ui-widget-content ui-datatable-even"><td role="gridcell" style="vertical-align: top; text-align: center; width: 15px;"><a id="j_idt59:j_idt569:6:j_idt576" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt59:j_idt569:6:j_idt576&quot;,f:&quot;j_idt59&quot;,p:&quot;j_idt59:BoxVerwendbarkeit&quot;,u:&quot;j_idt59:BoxVerwendbarkeit&quot;});return false;">
+                                                    <span class="fa fa-plus-square-o"></span></a><script id="j_idt59:j_idt569:6:j_idt576_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandLink","widget_j_idt59_j_idt569_6_j_idt576",{id:"j_idt59:j_idt569:6:j_idt576"});});</script></td><td role="gridcell" style="vertical-align: top;"><a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/studiengaenge/anzeigen.html?studiengang=129" target="_blank">MINTgrün Orientierungsstudium (OS.)</a></td><td role="gridcell" style="vertical-align: top;">1</td><td role="gridcell" style="vertical-align: top;">1</td><td role="gridcell" style="vertical-align: top;">SoSe 2026</td><td role="gridcell" style="vertical-align: top;">SoSe 2026</td></tr><tr data-ri="7" class="ui-widget-content ui-datatable-odd"><td role="gridcell" style="vertical-align: top; text-align: center; width: 15px;"><a id="j_idt59:j_idt569:7:j_idt576" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt59:j_idt569:7:j_idt576&quot;,f:&quot;j_idt59&quot;,p:&quot;j_idt59:BoxVerwendbarkeit&quot;,u:&quot;j_idt59:BoxVerwendbarkeit&quot;});return false;">
+                                                    <span class="fa fa-plus-square-o"></span></a><script id="j_idt59:j_idt569:7:j_idt576_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandLink","widget_j_idt59_j_idt569_7_j_idt576",{id:"j_idt59:j_idt569:7:j_idt576"});});</script></td><td role="gridcell" style="vertical-align: top;"><a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/studiengaenge/anzeigen.html?studiengang=64" target="_blank">Naturwissenschaften in der Informationsgesellschaft (B. Sc.)</a></td><td role="gridcell" style="vertical-align: top;">2</td><td role="gridcell" style="vertical-align: top;">5</td><td role="gridcell" style="vertical-align: top;">SoSe 2026</td><td role="gridcell" style="vertical-align: top;">WiSe 2026/27</td></tr><tr data-ri="8" class="ui-widget-content ui-datatable-even"><td role="gridcell" style="vertical-align: top; text-align: center; width: 15px;"><a id="j_idt59:j_idt569:8:j_idt576" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt59:j_idt569:8:j_idt576&quot;,f:&quot;j_idt59&quot;,p:&quot;j_idt59:BoxVerwendbarkeit&quot;,u:&quot;j_idt59:BoxVerwendbarkeit&quot;});return false;">
+                                                    <span class="fa fa-plus-square-o"></span></a><script id="j_idt59:j_idt569:8:j_idt576_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandLink","widget_j_idt59_j_idt569_8_j_idt576",{id:"j_idt59:j_idt569:8:j_idt576"});});</script></td><td role="gridcell" style="vertical-align: top;"><a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/studiengaenge/anzeigen.html?studiengang=32" target="_blank">Technische Informatik (B. Sc.)</a></td><td role="gridcell" style="vertical-align: top;">1</td><td role="gridcell" style="vertical-align: top;">1</td><td role="gridcell" style="vertical-align: top;">SoSe 2026</td><td role="gridcell" style="vertical-align: top;">SoSe 2026</td></tr></tbody></table></div></div><script id="j_idt59:j_idt569_s" type="text/javascript">$(function(){PrimeFaces.cw("DataTable","widget_j_idt59_j_idt569",{id:"j_idt59:j_idt569",groupColumnIndexes:[],disableContextMenuIfEmpty:false});});</script>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p><strong>Studierende anderer Studiengänge können dieses Modul ohne Kapazitätsprüfung belegen.</strong></p>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </div></span>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Sonstiges</h3>
+                    </div>
+
+                    <div class="col-xs-12"><span style="font-style: italic;">Keine Angabe</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div><input type="hidden" name="jakarta.faces.ViewState" id="j_id1:jakarta.faces.ViewState:3" value="-5754495619677104771:7835854346271690221" autocomplete="off" /><input type="hidden" name="jakarta.faces.ClientWindow" id="j_id1:jakarta.faces.ClientWindow:3" value="ab5a42a5-9b78-470b-a3cf-371abe7df188:4" autocomplete="off" />
+</form>
+    </main>
+
+    <footer id="status">
+        <a href="http://www.innocampus.tu-berlin.de" target="_blank" class="status-item">
+            <img src="/moses/docs/images/template/operator-logo.png" alt="Logo von innoCampus" title="Moses wird betrieben durch innoCampus" />
+        </a>
+
+        <div class="status-item hidden-xs">
+            Version 6.08.167 (Realm 6.08.001)<br /> 
+        </div>
+
+        <div class="status-item justify-right">
+
+            <a href="http://www.tu.berlin/footer/impressum/" target="_blank"> Impressum </a> / <a href="/moses/credits.html"> Credits </a>
+        </div>
+    </footer>
+
+    <nav id="nav-bottom"></nav>
+
+
+    <script>
+        function ajaxStart () {
+            const indicator = document.getElementById("loading-indicator")
+            if (indicator) {
+                indicator.classList.add("loading")
+            }
+        }
+
+        function ajaxComplete () {
+            const indicator = document.getElementById("loading-indicator")
+            if (indicator) {
+                indicator.classList.remove("loading")
+            }
+        }
+    </script><div id="j_idt643"></div><script id="j_idt643_s" type="text/javascript">$(function(){PrimeFaces.cw("AjaxStatus","widget_j_idt643",{id:"j_idt643",delay:0,start:function(){ajaxStart();},complete:function(xhr,settings,args){ajaxComplete();}});});</script><script src="/moses/jakarta.faces.resource/nav.js.html?ln=dist"></script><script>OmniFaces.Unload.init('76fc9e0b-7d26-4fee-85e7-1a62f06544e0')</script><script type="text/javascript">$(function(){Moses.Util.UrlParam.update('version', '11');;Moses.Util.UrlParam.remove('sprache');;});</script></body>
+</html>
