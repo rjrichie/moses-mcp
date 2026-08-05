@@ -44,6 +44,16 @@ This produces a runnable server at `dist/index.js`, which communicates over stdi
 
 ## Using it with an MCP client
 
+### Claude Code
+
+```bash
+claude mcp add moses -- node /absolute/path/to/moses-mcp/dist/index.js
+```
+
+This registers the server at local scope (just this project, just you). Use `-s user` to make it available in every project, or `-s project` to check a shared `.mcp.json` into this repo for teammates. Check `claude mcp list` or run `/mcp` inside a session to confirm it's connected.
+
+### Claude Desktop / other stdio clients
+
 Add it to your client's MCP server config, pointing at the built `dist/index.js`. For example, in Claude Desktop's `claude_desktop_config.json`:
 
 ```json
@@ -57,7 +67,7 @@ Add it to your client's MCP server config, pointing at the built `dist/index.js`
 }
 ```
 
-Any MCP client that supports stdio servers (Claude Code, Claude Desktop, etc.) can use this the same way — point it at `node dist/index.js`.
+Any MCP client that supports stdio servers can use this the same way — point it at `node dist/index.js`.
 
 ## A note on `robots.txt`
 
