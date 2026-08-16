@@ -1,0 +1,3 @@
+[mcp_servers.moses]
+command = "node"
+args = ["/Users/richiejonathan/Projects/moses-mcp"]

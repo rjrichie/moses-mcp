@@ -1,7 +1,15 @@
 /**
  * End-to-end check: spawns the built MCP server over stdio and walks through
- * the four example queries the tool was designed for. Run with:
+ * example queries the tool was designed for, against the LIVE Moses API.
+ * Run with:
  *   npm run build && npx tsx scripts/e2e-check.ts
+ *
+ * Area names/counts below are tied to Informatik B.Sc.'s current StuPO,
+ * which this script resolves dynamically (via get_degree_program_structure)
+ * rather than hardcoding a StuPO id — but the specific area names asserted
+ * on (e.g. "Fachübergreifende Kompetenzen") reflect Informatik's curriculum
+ * structure AS OF the newest StuPO at the time this was last updated,  and
+ * may need updating again if/when TU Berlin restructures the curriculum.
  */
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
@@ -19,7 +27,7 @@ async function main() {
   const client = new Client({ name: "e2e-check", version: "0.1.0" });
   await client.connect(transport);
 
-  console.log("=== Query 1: Pflichtmodule for Informatik B.Sc. ===");
+  console.log("=== Query 1: degree program + curriculum structure resolution for Informatik B.Sc. ===");
   const searchRes = textOf(
     await client.callTool({ name: "search_degree_programs", arguments: { query: "Informatik" } }),
   );
@@ -31,33 +39,36 @@ async function main() {
     await client.callTool({ name: "get_degree_program_structure", arguments: { programId: informatik.id } }),
   );
   console.log("Resolved StuPO/semester:", structure.selectedStupo, structure.selectedSemester);
+  if (!structure.mapped || structure.areas.length === 0) throw new Error("Expected a mapped curriculum with areas");
   const pflicht = structure.areas.find((a: any) => a.name === "Pflichtbereich");
   if (!pflicht) throw new Error("Pflichtbereich not found");
-  console.log(`Pflichtbereich: ${pflicht.moduleCount} modules, ${pflicht.lp} LP`);
+  console.log(`Pflichtbereich: ${pflicht.subAreaCount} sub-areas`);
 
-  const pflichtArea = textOf(
+  const fachuebergreifend = structure.areas.find((a: any) => a.name === "Fachübergreifende Kompetenzen");
+  if (!fachuebergreifend) throw new Error("Fachübergreifende Kompetenzen not found");
+
+  const fuArea = textOf(
     await client.callTool({
       name: "list_area_modules",
       arguments: {
         programId: informatik.id,
         stupo: structure.selectedStupo.value,
         semester: structure.selectedSemester.value,
-        area: "Pflichtbereich",
+        area: "Fachübergreifende Kompetenzen",
       },
     }),
   );
-  const areaModules = pflichtArea.modules;
-  console.log(`list_area_modules returned ${areaModules.length} modules`);
-  console.log("passingRules:", pflichtArea.passingRules);
-  if (areaModules.length !== pflicht.moduleCount) {
-    throw new Error(`Expected ${pflicht.moduleCount} modules, got ${areaModules.length}`);
+  console.log(`list_area_modules returned ${fuArea.modules.length} modules`);
+  console.log("passingRules:", fuArea.passingRules);
+  if (fuArea.modules.length !== fachuebergreifend.moduleCount) {
+    throw new Error(`Expected ${fachuebergreifend.moduleCount} modules, got ${fuArea.modules.length}`);
   }
-  if (pflichtArea.passingRules.length === 0) {
-    throw new Error("Expected at least one passing rule for Pflichtbereich");
+  if (fuArea.passingRules.length === 0) {
+    throw new Error("Expected at least one passing rule for Fachübergreifende Kompetenzen");
   }
 
-  console.log("\n=== Query 2: which Pflichtmodule use Portfolioprüfung ===");
-  const portfolio = areaModules.filter((m: any) => m.examType === "Portfolioprüfung");
+  console.log("\n=== Query 2: which of those modules use Portfolioprüfung ===");
+  const portfolio = fuArea.modules.filter((m: any) => m.examType === "Portfolioprüfung");
   console.log(
     `${portfolio.length} modules use Portfolioprüfung:`,
     portfolio.map((m: any) => m.name),
@@ -72,7 +83,7 @@ async function main() {
         programId: informatik.id,
         stupo: structure.selectedStupo.value,
         semester: structure.selectedSemester.value,
-        area: "Wahlpflichtbereich Programmierpraktikum",
+        area: "Programmierpraktikum",
       },
     }),
   );
@@ -86,13 +97,22 @@ async function main() {
   console.log(`Found ${cvModules.length} Computer Vision modules:`, cvModules.map((m: any) => m.title));
   if (cvModules.length === 0) throw new Error("Expected Computer Vision modules");
 
-  console.log("\n=== Query 4: cross-program usage for a module ===");
+  console.log("\n=== Query 4: module detail resolution (incl. cross-program usage) ===");
   const detail = textOf(
     await client.callTool({ name: "get_module_details", arguments: { moduleNumber: "40022" } }),
   );
-  console.log(`Module ${detail.moduleNumber}/${detail.version} "${detail.title}" is used in:`);
-  for (const p of detail.usedInPrograms) console.log(` - ${p.programName}`);
-  if (detail.usedInPrograms.length === 0) throw new Error("Expected cross-program usage data");
+  console.log(`Module ${detail.moduleNumber}/${detail.version} "${detail.title}"`);
+  if (!detail.title || !detail.content) throw new Error("Expected a resolved module description");
+  // usedInPrograms depends on `npm run build-usage-index` having been run at
+  // least once (that reverse lookup is deliberately NOT built automatically
+  // — see src/services/moduleUsageIndex.ts — since a full build takes on
+  // the order of minutes). Report it, but don't fail the check over it.
+  if (detail.usedInPrograms.length > 0) {
+    console.log("usedInPrograms:");
+    for (const p of detail.usedInPrograms) console.log(` - ${p.programName}`);
+  } else {
+    console.log("usedInPrograms is empty (expected unless `npm run build-usage-index` has been run).");
+  }
 
   console.log("\nAll checks passed.");
   await client.close();

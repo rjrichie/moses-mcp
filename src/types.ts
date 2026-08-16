@@ -75,6 +75,14 @@ export interface ProgramUsage {
   lastUsed: string;
 }
 
+export interface ModuleComponent {
+  name: string;
+  type: string;
+  number: string;
+  turnus: string;
+  language: string;
+}
+
 export interface ModuleDetail {
   moduleNumber: string;
   version: string;
@@ -91,5 +99,9 @@ export interface ModuleDetail {
   orgUnit: string;
   learningOutcomes: string;
   content: string;
+  /** Semester(s) this module can be started in, e.g. "Wintersemester" or "Winter- und Sommersemester". */
+  startingSemesters: string;
+  /** Individual Lehrveranstaltungen (lecture/exercise/...) making up the module, each with its own Turnus. */
+  components: ModuleComponent[];
   usedInPrograms: ProgramUsage[];
 }

@@ -55,3 +55,22 @@ export async function cached<T>(
   await writeFile(file, JSON.stringify(entry), "utf8");
   return value;
 }
+
+/**
+ * Read a cached value for `key` if a fresh one exists, without ever
+ * computing/storing a value on a miss. For caches that must be built
+ * explicitly out-of-band (e.g. an expensive one-time index build) rather
+ * than lazily on first request.
+ */
+export async function peekCached<T>(key: string, options: { ttlMs?: number } = {}): Promise<T | undefined> {
+  const ttlMs = options.ttlMs ?? DEFAULT_TTL_MS;
+  const file = keyToFilename(key);
+  try {
+    const raw = await readFile(file, "utf8");
+    const entry = JSON.parse(raw) as CacheEntry<T>;
+    if (Date.now() - entry.storedAt < ttlMs) return entry.value;
+  } catch {
+    // No cache entry (or corrupt) — treat as absent.
+  }
+  return undefined;
+}
