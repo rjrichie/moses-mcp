@@ -2,8 +2,13 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
+import { loadEnvFile } from "./loadEnv.js";
 import { getDegreeProgramStructure, listAreaModules, searchDegreePrograms } from "./services/degreePrograms.js";
 import { getModuleDetails, searchModules } from "./services/modules.js";
+
+// MCP clients generally don't forward arbitrary env vars to spawned server
+// processes, so load .env ourselves rather than relying on the caller.
+loadEnvFile();
 
 const server = new McpServer({
   name: "moses-mcp",
@@ -112,9 +117,13 @@ server.registerTool(
     title: "Get module details",
     description:
       "Get a module version's full description: title, credits, exam type (Prüfungsform), grading, teaching " +
-      "language, faculty/institute/Fachgebiet, learning outcomes, content, and — critically — the list of " +
-      "degree programs (usedInPrograms) that use this module version. Use this to answer 'what other majors " +
-      "could take this module'. If version is omitted, resolves the current version.",
+      "language, faculty/institute/Fachgebiet, learning outcomes, content, Turnus (startingSemesters — which " +
+      "semester(s) the module can be started in, e.g. 'Wintersemester', 'Sommersemester', or 'Winter- und " +
+      "Sommersemester', plus a components list with per-Lehrveranstaltung Turnus), and — critically — the list " +
+      "of degree programs (usedInPrograms) that use this module version. Use startingSemesters/components to " +
+      "answer 'is this offered in winter or summer' when building a study plan — don't guess this from " +
+      "validity dates. Use usedInPrograms to answer 'what other majors could take this module'. If version is " +
+      "omitted, resolves the current version.",
     inputSchema: {
       moduleNumber: z.string().describe("Module number, e.g. '40022'"),
       version: z.string().optional().describe("Specific module version; defaults to the current version"),
